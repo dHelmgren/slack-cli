@@ -19,4 +19,20 @@ describe "User" do
       end
     end
   end
+
+  describe "self.list_all" do
+    it "returns a list of valid users" do
+      result = []
+      VCR.use_cassette("list-user-endpoint") do
+        result = User.list_all
+      end
+
+      expect(result).must_be_kind_of Array
+      expect(result.length).must_be :>, 0
+      result.each do |item|
+        expect(item).must_be_kind_of User
+      end
+
+    end
+  end
 end
