@@ -7,6 +7,7 @@ class Recipient
     @name = name
   end
 
+  #api endpoint https://api.slack.com/methods/chat.postMessage
   def send_message(msg_text)
     #send the message using HTTParty
 
