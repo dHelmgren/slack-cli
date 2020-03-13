@@ -1,7 +1,5 @@
 require "httparty"
-require "dotenv"
 
-Dotenv.load
 
 class Recipient
 
