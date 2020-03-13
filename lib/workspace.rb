@@ -45,5 +45,8 @@ class Workspace
   end
 
   def send_message
+    msg_text = gets.chomp
+
+    @selected.send_message(msg_text)
   end
 end
