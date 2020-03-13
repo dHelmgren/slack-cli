@@ -2,9 +2,6 @@ require "dotenv"
 require "httparty"
 require "table_print"
 
-require_relative "recipient"
-require_relative "user"
-require_relative "channel"
 require_relative "workspace"
 
 Dotenv.load
