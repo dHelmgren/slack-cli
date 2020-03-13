@@ -1,7 +1,3 @@
-# This will be common to all the other 
-class SlackAPIErrror < Exception
-end
-
 class Recipient
 
   attr_reader :slack_id, :name
@@ -27,4 +23,9 @@ class Recipient
     raise NotImplementedError, "Define this method in a child class"
   end
 
+end
+
+# This will be common to all the other files in the program
+# so I'm including it here, where it will be accessible to each other class.
+class SlackAPIErrror < Exception
 end
