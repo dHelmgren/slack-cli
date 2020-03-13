@@ -15,6 +15,14 @@ class User < Recipient
   end
 
   #------ Class Methods ------
+
+  #api endpoint documentation https://api.slack.com/methods/users.list
   def self.list_all
+    #get the data
+
+    #parse the data, instansiate an object
+
+    #return the list of instansiated objects
+    #this format tells me that I can use this to instansiate a Workspace!
   end
 end

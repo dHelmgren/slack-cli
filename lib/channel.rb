@@ -15,6 +15,7 @@ class Channel < Recipient
 
   #------ Class Methods ------
 
+  #api endpoint https://api.slack.com/methods/conversations.list
   def self.list_all
   end
 

@@ -8,6 +8,9 @@ class Recipient
   end
 
   def send_message(msg_text)
+    #send the message using HTTParty
+
+    #deal with errors, if any
   end
 
   def details
@@ -16,9 +19,15 @@ class Recipient
 
   # ------ Class Methods ------
 
+  #this looks like it should be fetcher, based on the API's docs
   def self.get(url, params)
+    #send message using HTTParty
+
+    #check for errors, if any
   end
 
+
+  #this smells like a bigger factory method
   def self.list_all
     raise NotImplementedError, "Define this method in a child class"
   end
