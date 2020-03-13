@@ -9,24 +9,20 @@ Dotenv.load
 def main
   workspace = Slack::Workspace.new 
   puts "\n"
-  puts "Welcome to the Ada Slack CLI! This Slack workspace currently has #{workspace.users.count} users and #{workspace.channels.count} channels. Press enter to continue."
-  
-  user_input = gets.chomp
-  
-  until user_input == "quit" || user_input == "exit" || user_input == "quit"
-    print "Please choose an option: list users, list channels, select user, select channel, details, send message, or quit: "
-    user_input = gets.chomp.downcase
+  puts "Welcome to the Ada Slack CLI! This Slack workspace currently has #{workspace.users.count} users and #{workspace.channels.count} channels."
+
+  user_input = nil
+
+  until user_input == "quit" || user_input == "exit"
     
     case user_input
     when "list users"
       tp workspace.users, "slack_id", "name", "real_name" 
       puts "\n"
-      user_input = nil
       
     when "list channels"
       tp workspace.channels, "name", "topic", "member_count", "slack_id"
       puts "\n"
-      user_input = nil
       
     when "select user"
       print "Please enter the user name or ID: "
@@ -41,7 +37,6 @@ def main
     when "details"
       if workspace.selected == nil
         puts "Please select a user or channel."
-        user_input = nil
         puts "\n"
       else
         workspace.show_details
@@ -51,7 +46,6 @@ def main
     when "send message"
       if workspace.selected == nil
         puts "Please select a user or channel."
-        user_input = nil
         puts "\n"
       else
         print "Please enter your message: "
@@ -62,9 +56,16 @@ def main
       puts "Sorry, I didn't understand your request. Please try again."
       puts "\n"
     end
+
+    prompt_for_input
   end 
   puts "Thank you for using the ADA Slack CLI!"
   puts "\n"
+end
+
+def prompt_for_input
+  print "Please choose an option: list users, list channels, select user, select channel, details, send message, or quit: \n"
+  return gets.chomp.downcase
 end
 
 main if __FILE__ == $PROGRAM_NAME
