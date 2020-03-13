@@ -1,4 +1,7 @@
 require "httparty"
+require "dotenv"
+
+Dotenv.load
 
 class Recipient
 
@@ -25,11 +28,11 @@ class Recipient
   #this looks like it should be fetcher, based on the API's docs
   def self.get(url)
     #send message using HTTParty
-    response = HTTParty.get(url, query: {token: ENV['SLACK_API_TOKEN']})
+    response = HTTParty.get(url, query: {token: ENV['SLACK_TOKEN']})
 
     #check for errors, if any
-    if response.code != 200
-      raise SlackAPIError, "We encountered a problem: #{response.body["error"]}"
+    if response.code != 200 || response["ok"] == false
+      raise SlackAPIError, "We encountered a problem: #{response["error"]}"
     end
 
     return response
