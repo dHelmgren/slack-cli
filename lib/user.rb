@@ -12,6 +12,7 @@ class User < Recipient
   end
 
   def details
+    tp self, "slack_id", "name", "real_name"
   end
 
   #------ Class Methods ------

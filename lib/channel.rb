@@ -11,6 +11,7 @@ class Channel < Recipient
   end
 
   def details
+    tp self, "slack_id", "name", "topic", "member_count"
   end
 
   #------ Class Methods ------
