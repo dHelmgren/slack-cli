@@ -7,7 +7,7 @@ require_relative "workspace"
 Dotenv.load
 
 def main
-  workspace = Slack::Workspace.new 
+  workspace = Workspace.new 
   puts "\n"
   puts "Welcome to the Ada Slack CLI! This Slack workspace currently has #{workspace.users.count} users and #{workspace.channels.count} channels."
 
