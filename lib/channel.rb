@@ -13,6 +13,8 @@ class Channel < Recipient
   def details
   end
 
+  #------ Class Methods ------
+
   def self.list_all
   end
 
