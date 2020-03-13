@@ -11,7 +11,7 @@ def main
   puts "\n"
   puts "Welcome to the Ada Slack CLI! This Slack workspace currently has #{workspace.users.count} users and #{workspace.channels.count} channels."
 
-  user_input = nil
+  user_input = prompt_for_input
 
   until user_input == "quit" || user_input == "exit"
     
@@ -57,7 +57,7 @@ def main
       puts "\n"
     end
 
-    prompt_for_input
+    user_input = prompt_for_input
   end 
   puts "Thank you for using the ADA Slack CLI!"
   puts "\n"
