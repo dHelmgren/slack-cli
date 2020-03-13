@@ -25,14 +25,8 @@ class Recipient
   #this looks like it should be fetcher, based on the API's docs
   def self.get(url)
     #send message using HTTParty
-    response = HTTParty.get(url, query: {token: ENV['SLACK_API_TOKEN']})
 
     #check for errors, if any
-    if response.code != 200
-      raise SlackAPIError, "We encountered a problem: #{response.body["error"]}"
-    end
-
-    return response
   end
 
 
