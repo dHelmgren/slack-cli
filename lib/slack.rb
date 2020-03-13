@@ -30,14 +30,12 @@ def main
       
     when "select user"
       print "Please enter the user name or ID: "
-      name_or_id = gets.chomp
-      puts workspace.select(name_or_id)
+      puts workspace.select_user
       puts "\n"
       
     when "select channel"
       print "Please enter the channel name or ID: "
-      name_or_id = gets.chomp
-      puts workspace.select(name_or_id)
+      puts workspace.select_channel
       puts "\n"
       
     when "details"
