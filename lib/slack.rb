@@ -55,9 +55,7 @@ def main
         puts "\n"
       else
         print "Please enter your message: "
-        message = gets.chomp
-        slack_id = workspace.select(name_or_id)
-        workspace.user_message(message, slack_id)
+        workspace.send_message
         puts "\n"
       end
     else
